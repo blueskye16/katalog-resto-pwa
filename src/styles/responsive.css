@@ -4,6 +4,9 @@
 }
 
 @media screen and (max-width: 760px) {
+  .hero{
+    min-height: 32em;
+  }
   .nav__wrap {
     z-index: 10;
     background-color: #fff;

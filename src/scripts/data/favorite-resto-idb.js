@@ -13,6 +13,11 @@ const openIdb = openDB(DATABASE_NAME, DATABASE_VERSION, {
 const FavRestoIdb = {
   // Get one restaurant
   async getResto(id) {
+    if (!id) {
+      return;
+    }
+
+    // eslint-disable-next-line consistent-return
     return (await openIdb).get(OBJECT_STORE_NAME, id);
   },
 
@@ -23,8 +28,17 @@ const FavRestoIdb = {
 
   // Put restaurant
   async putResto(resto) {
+    // eslint-disable-next-line no-prototype-builtins
+    if (!resto.hasOwnProperty('id')) {
+      return;
+    }
+
+    // eslint-disable-next-line consistent-return
     return (await openIdb).put(OBJECT_STORE_NAME, resto);
   },
+  // async putResto(resto) {
+  //   return (await openIdb).put(OBJECT_STORE_NAME, resto);
+  // },
 
   // Delete restaurant
   async deleteResto(id) {

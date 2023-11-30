@@ -11,7 +11,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   color: #424242;
   scroll-behavior: smooth;
@@ -117,13 +117,71 @@ html {
 /* Jumbotron Styles */
 .hero {
   display: flex;
-  min-height: 42em;
+  min-height: 40em;
+  max-width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(rgba(0, 0, 5, 0.2), rgba(0, 0, 5, 0.5)),
-    url('../public/heros/hero-image_1.jpg');
+    url("../public/sharpHeros/hero-image_4-large.jpg");
 }
+
+@media (max-width: 760px) {
+  .hero {
+    /* background-image: url('../public/sharpHeros/hero-image_4-small.jpg'); */
+    background-image: image-set('../public/sharpHeros/hero-image_4-small.jpg') linear-gradient(rgba(0, 0, 5, 0.2), rgba(0, 0, 5, 0.5));
+  }
+}
+
+@media (min-width: 900px) {
+  .hero {
+    /* background-image: url('../public/sharpHeros/hero-image_4-large.jpg'); */
+    background-image: image-set('../public/sharpHeros/hero-image_4-large.jpg') linear-gradient(rgba(0, 0, 5, 0.2), rgba(0, 0, 5, 0.5));
+  }
+}
+
+/* @media screen and (min-widht: 480px) {
+  .hero{
+    background-image: url('../../dist//heros/hero-image_4-small.jpg');
+  }
+  body{
+    background-color: greenyellow;
+  }
+}
+@media screen and (min-widht: 1400px) {
+  .hero{
+    background-image: url('../../dist//heros/hero-image_4-large.jpg');
+  }
+  body{
+    background-color: blueviolet;
+  }
+} */
+
+/* .hero {
+  display: flex;
+  min-height: 40em;
+  max-width: 100%;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 5, 0.2), rgba(0, 0, 5, 0.5)),
+    url("../public/heros/hero-image_4.jpg");
+  background-image: 
+    -webkit-image-set(
+      url('../public/sharpHeros/hero-image_4-small.jpg') 1x,
+      url('../public/sharpHeros/hero-image_4-large.jpg') 2x
+    );
+  background-image:
+    image-set(
+      url('../public/sharpHeros/hero-image_4-small.jpg') 1x,
+      url('../public/sharpHeros/hero-image_4-large.jpg') 2x
+    );
+} */
 
 .hero__inner {
   text-align: center;
